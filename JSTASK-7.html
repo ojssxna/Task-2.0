@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Train Example</title>
+</head>
+<body>
+	<div style="position: relative; text-align: center;">
+		<div id="train" style="position: absolute; top: 50px; left: 50%; transform: translateX(-50%); width: 100px; height: 50px; background-image: url('https://media.giphy.com/media/3oEjI6SIIHBdRxXI40/giphy.gif'); background-size: cover;"></div>
+		<br><br><br><br><br><br><br><br><br>
+        <p>Click the following buttons to handle animation</p>
+		<div style="margin-top: 20px;">
+			<button onclick="startTrain()">Start</button>
+			<button onclick="stopTrain()">Stop</button>
+		</div>
+	</div>
+
+	<script>
+		var train = document.getElementById("train");
+		var speed = 2;
+		var interval;
+
+		function startTrain() {
+			interval = setInterval(moveTrain, 8);
+		}
+
+		function stopTrain() {
+			clearInterval(interval);
+		}
+
+		function moveTrain() {
+			var currentLeft = parseInt(train.style.left);
+			if (currentLeft < window.innerWidth - train.offsetWidth) {
+				train.style.left = currentLeft + speed + "px";
+			} else {
+				stopTrain();
+			}
+		}
+	</script>
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Multiplication and Division</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    label {
+      margin-bottom: 10px;
+    }
+
+    input[type="number"] {
+      margin-bottom: 20px;
+    }
+
+    button {
+      margin-bottom: 20px;
+    }
+
+    #result {
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <form>
+    <label for="num1">Enter the first number:</label>
+    <input type="number" id="num1" required>
+
+    <label for="num2">Enter the second number:</label>
+    <input type="number" id="num2" required>
+
+    <button type="button" onclick="multiply()">Multiply</button>
+    <button type="button" onclick="divide()">Divide</button>
+
+    <div id="result"></div>
+  </form>
+
+  <script>
+    function multiply() {
+      const num1 = parseFloat(document.getElementById("num1").value);
+      const num2 = parseFloat(document.getElementById("num2").value);
+      const multiplication = num1 * num2;
+      document.getElementById("result").innerHTML = `Multiplication of ${num1} and ${num2} is ${multiplication}.`;
+    }
+
+    function divide() {
+      const num1 = parseFloat(document.getElementById("num1").value);
+      const num2 = parseFloat(document.getElementById("num2").value);
+      const division = num1 / num2;
+      document.getElementById("result").innerHTML = `Division of ${num1} and ${num2} is ${division}.`;
+    }
+  </script>
+</body>
+</html>

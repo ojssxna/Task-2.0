@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Show Date and Time</title>
+</head>
+<body>
+  <button onclick="showDate()">Show Date</button>&nbsp;&nbsp;&nbsp;&nbsp;
+  <button onclick="showTime()">Show Time</button>
+
+  <div id="result"></div>
+
+  <script>
+    function showDate() {
+      const now = new Date();
+      const date = now.getDate();
+      const month = now.getMonth() + 1;
+      const year = now.getFullYear();
+      const formattedDate = `${date}/${month}/${year}`;
+      document.getElementById("result").innerHTML = formattedDate;
+    }
+
+    function showTime() {
+      const now = new Date();
+      const date = now.getDate();
+      const month = now.getMonth() + 1;
+      const year = now.getFullYear();
+      const hours = now.getHours();
+      const minutes = now.getMinutes();
+      const seconds = now.getSeconds();
+      const timezoneOffset = now.getTimezoneOffset();
+      const formattedTime = `${date}/${month}/${year} ${hours}:${minutes}:${seconds} GMT${timezoneOffset < 0 ? '+' : '-'}${Math.abs(timezoneOffset / 60)}`;
+      document.getElementById("result").innerHTML = formattedTime;
+    }
+  </script>
+</body>
+</html>
